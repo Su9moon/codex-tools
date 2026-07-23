@@ -35,7 +35,7 @@ Keep recoverable project state in files, not chat history. Prefer deterministic 
 1. 在项目根目录运行 `scripts/status.ps1`。 Run the status script at the project root.
 2. 读取 `PROJECT_CONTEXT.md` 和 `TASKS.md` 的活动行；仅在会影响任务时读取 `DECISION_LOG.md`。 Read project context and the active task row; read decisions only when relevant.
 3. 新任务使用下一个零填充编号，在 `TASKS.md` 添加一行，并用 `templates/task.md` 创建 `tasks/TASK-xxx.md`。 For a new task, allocate the next ID and create its compact record.
-4. 记录目标、开始时间、Git 基线、验收检查和真正阻塞的问题。 Record objective, start time, Git baseline, acceptance checks, and real blockers.
+4. 运行 `scripts/tokdash-current-session.ps1`；它优先读取本机当前日志，若返回 ID，写入 `Tokdash session IDs:`。再记录目标、开始时间、Git 基线、验收检查和真正阻塞的问题。 Run the script, which prefers the newest local log; record its ID when available, then capture objective, start time, Git baseline, checks, and blockers.
 5. 改文件前说明任务范围与尚未解决的重要选择。 State scope and unresolved material choices before changes.
 
 ## `/status`

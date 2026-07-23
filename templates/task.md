@@ -2,6 +2,7 @@
 
 Status: {{STATUS}}
 Started: {{STARTED_AT}}
+Tokdash session IDs: {{SESSION_IDS}}
 
 ## Objective
 
