@@ -35,7 +35,7 @@ Keep recoverable project state in files, not chat history. Prefer deterministic 
 1. 在项目根目录运行 `scripts/status.ps1`。 Run the status script at the project root.
 2. 读取 `PROJECT_CONTEXT.md` 和 `TASKS.md` 的活动行；仅在会影响任务时读取 `DECISION_LOG.md`。 Read project context and the active task row; read decisions only when relevant.
 3. 新任务使用下一个零填充编号，在 `TASKS.md` 添加一行，并用 `templates/task.md` 创建 `tasks/TASK-xxx.md`。 For a new task, allocate the next ID and create its compact record.
-4. 运行 `scripts/tokdash-current-session.ps1`；它优先读取本机当前日志，若返回 ID，写入 `Tokdash session IDs:`。再记录目标、开始时间、Git 基线、验收检查和真正阻塞的问题。 Run the script, which prefers the newest local log; record its ID when available, then capture objective, start time, Git baseline, checks, and blockers.
+4. 运行 `scripts/tokdash-current-session.ps1`；若返回 ID，写入 `Tokdash session IDs:`，再运行 `tokdash-session-snapshot.ps1` 并记录开始 Token/成本。 Record the task ID and start snapshot when available.
 5. 改文件前说明任务范围与尚未解决的重要选择。 State scope and unresolved material choices before changes.
 
 ## `/status`
@@ -50,7 +50,7 @@ Run the status script and only the active task record. If available, query compa
 2. 运行 `scripts/status.ps1`，按需检查真实改动文件和 diff。 Inspect actual changed files and diff as needed.
 3. 从 `templates/task-report.md` 创建 `reports/TASK-xxx.md`。仅在 commit 已存在时写入哈希；绝不自动 commit。 Create a report; include a commit only after it exists; never commit automatically.
 4. 更新任务行；仅在对用户可见时更新 `CHANGELOG.md`，仅在符合条件时更新决策日志。 Update indexes selectively.
-5. 有意义时用 Tokdash 记录任务收尾快照；写入 JSONL 时标为聚合快照，不能声称是任务独占用量。 Capture an aggregate snapshot only; never label it task-exclusive.
+5. 对关联 ID 运行 `tokdash-session-snapshot.ps1` 并记录结束 Token/成本；页面以结束减开始显示工单消耗。 Record end snapshots; the page uses end-minus-start deltas.
 
 ## Token 日志结构 / Token log schema
 

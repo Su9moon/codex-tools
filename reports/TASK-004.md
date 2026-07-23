@@ -12,7 +12,7 @@ Completed: 2026-07-23
 
 ## Verification
 
-- The active session resolver returned `019f8eac-5d70-7de0-9655-819c2855f1b2`.
+- The active session resolver returned `019f8eac-5d70-7de0-9655-819c2855f1b2`; no historical baseline existed, so no task cost was attributed.
 - Tokdash `/api/projects` discovered `codex-tools`, its task index, and its matched sessions.
 
 ## Token usage
