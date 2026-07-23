@@ -1,0 +1,4 @@
+interface:
+  display_name: "节省 Token / Save Tokens"
+  short_description: "轻量任务工作流与本地 Token 快照 / Lightweight task and token workflow."
+  default_prompt: "使用 $save-tokens 以最小上下文启动并跟踪此任务。"
