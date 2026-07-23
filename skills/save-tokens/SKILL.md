@@ -18,6 +18,9 @@ Keep recoverable project state in files, not chat history. Prefer deterministic 
 - 用项目根目录的 `scripts/status.ps1` 获取 Git 状态，不依赖上一轮对话推断。 Get Git state from the script, never from a prior turn.
 - 不估算 Token；仅写入运行时或集成工具提供的实测值，否则记为 `unavailable`。 Do not estimate tokens; record measured values only.
 - 只在显式查询、`/status` 或任务收尾时访问 Tokdash；使用其已索引的本地 API，不重复解析 Codex 会话。 Query indexed local Tokdash only when needed; do not reparse sessions.
+- 新工单先运行 `scripts/task-start.ps1 -TaskFile ...`；执行完成后只汇报并请求用户认可。只有用户明确认可关闭时，才运行 `scripts/task-close.ps1 -UserConfirmed`，形成最终结束快照、计算用时/Token/成本并关闭工单。未认可不得结束快照或改为已完成。历史缺失值保持 `unavailable`。
+- 编码前确认闸门：工单可以先建立、讨论和拆分，但没有用户明确确认“开始执行/开始编码”之前，不得修改代码、运行实现脚本或标记为进行中。用户确认后才运行 `task-start.ps1` 并进入编码阶段。
+- 建立工单即形成开始快照：用户明确要求“建立工单”时，立即记录开始时间、会话 ID、开始 Token、开始成本和开始 `token_events`。建立前先列出并提醒所有未关闭工单；旧工单未关闭时仍可建立新工单，但必须明确提示待关闭项。开始快照不等于开始编码，编码仍需用户另行确认。
 
 ## 文件约定 / File convention
 
@@ -39,6 +42,8 @@ Keep recoverable project state in files, not chat history. Prefer deterministic 
 5. 改文件前说明任务范围与尚未解决的重要选择。 State scope and unresolved material choices before changes.
 
 每个新工单必须记录 `Started`、`Completed`、`Duration minutes`、`Outcome`、`Tokdash session IDs` 及开始/结束快照。`Rework count` 为可选字段，仅在用户明确要求重做、修复或指出结果错误时记录；普通连续对话不判断。`Negative rating count` 为可选字段，仅在用户明确差评、辱骂或表示结果不可接受时记录；不得根据普通质疑推断。历史工单缺失字段时标记为 `unavailable`，不得补造数据。
+
+工单 `Objective` 使用固定工程动作词：`分析`、`编写`、`讨论`、`修复`、`验证`。根据用户请求自动选择最主要的动作；只有无法判断时才向用户询问一次。用户未确认前不要创建正式工单，暂记为待确认。不要为判断目标分析每一轮对话。
 
 Every new task must record `Started`, `Completed`, `Duration minutes`, `Outcome`, `Tokdash session IDs`, and start/end snapshots. `Rework count` is optional and is recorded only when the user explicitly asks for a redo/fix or reports an incorrect result; do not classify ordinary continuation turns. `Negative rating count` is optional and is recorded only for an explicit bad rating, insult, or unacceptable-result statement; do not infer it from ordinary questions. Mark missing historical fields as `unavailable`; never invent values.
 
