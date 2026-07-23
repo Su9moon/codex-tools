@@ -24,3 +24,6 @@ Correct completion-rate semantics, complete the task table fields, and provide a
 - JavaScript and Python checks pass.
 
 
+
+## Rating log
+- 2026-07-24: 用户明确给出差评，原因：关闭接入无效且使用弹窗。
