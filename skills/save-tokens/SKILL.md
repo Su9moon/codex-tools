@@ -38,9 +38,9 @@ Keep recoverable project state in files, not chat history. Prefer deterministic 
 4. 运行 `scripts/tokdash-current-session.ps1`；若返回 ID，写入 `Tokdash session IDs:`，再运行 `tokdash-session-snapshot.ps1` 并记录开始 Token/成本。 Record the task ID and start snapshot when available.
 5. 改文件前说明任务范围与尚未解决的重要选择。 State scope and unresolved material choices before changes.
 
-每个新工单必须记录 `Started`、`Completed`、`Duration minutes`、`Outcome`、`Rework count`、`Tokdash session IDs` 及开始/结束快照。历史工单缺失字段时标记为 `unavailable`，不得补造数据。
+每个新工单必须记录 `Started`、`Completed`、`Duration minutes`、`Outcome`、`Tokdash session IDs` 及开始/结束快照。`Rework count` 为可选字段，仅在用户明确要求重做、修复或指出结果错误时记录；普通连续对话不判断。历史工单缺失字段时标记为 `unavailable`，不得补造数据。
 
-Every new task must record `Started`, `Completed`, `Duration minutes`, `Outcome`, `Rework count`, `Tokdash session IDs`, and start/end snapshots. Mark missing historical fields as `unavailable`; never invent values.
+Every new task must record `Started`, `Completed`, `Duration minutes`, `Outcome`, `Tokdash session IDs`, and start/end snapshots. `Rework count` is optional and is recorded only when the user explicitly asks for a redo/fix or reports an incorrect result; do not classify ordinary continuation turns. Mark missing historical fields as `unavailable`; never invent values.
 
 ## `/status`
 

@@ -5,7 +5,7 @@ Started: {{STARTED_AT}}
 Completed: {{COMPLETED_AT}}
 Duration minutes: {{DURATION_MINUTES}}
 Outcome: {{OUTCOME}}
-Rework count: {{REWORK_COUNT}}
+Rework count: {{REWORK_COUNT_OR_UNAVAILABLE}}
 Tokdash session IDs: {{SESSION_IDS}}
 Tokdash start tokens: {{START_TOKENS}}
 Tokdash start cost: {{START_COST}}
