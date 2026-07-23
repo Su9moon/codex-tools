@@ -2,6 +2,10 @@
 
 Status: {{STATUS}}
 Started: {{STARTED_AT}}
+Completed: {{COMPLETED_AT}}
+Duration minutes: {{DURATION_MINUTES}}
+Outcome: {{OUTCOME}}
+Rework count: {{REWORK_COUNT}}
 Tokdash session IDs: {{SESSION_IDS}}
 Tokdash start tokens: {{START_TOKENS}}
 Tokdash start cost: {{START_COST}}
