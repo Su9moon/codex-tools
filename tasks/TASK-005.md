@@ -27,3 +27,7 @@ Correct completion-rate semantics, complete the task table fields, and provide a
 
 ## Rating log
 - 2026-07-24: 用户明确给出差评，原因：关闭接入无效且使用弹窗。
+
+## Rework log
+- 2026-07-24: 用户反馈状态筛选、关闭接入、工单表渲染和差评汇总仍未达标。
+- 2026-07-24: 用户明确给出差评。
