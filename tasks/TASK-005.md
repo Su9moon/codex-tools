@@ -31,3 +31,7 @@ Correct completion-rate semantics, complete the task table fields, and provide a
 ## Rework log
 - 2026-07-24: 用户反馈状态筛选、关闭接入、工单表渲染和差评汇总仍未达标。
 - 2026-07-24: 用户明确给出差评。
+
+## Rework log
+- 2026-07-24: 用户反馈重写后的页面破坏原有筛选、关闭接入和重新读取语义。
+- 2026-07-24: 用户明确给出差评。
