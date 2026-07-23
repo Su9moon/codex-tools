@@ -5,7 +5,7 @@ Started: 2026-07-24
 Completed: 2026-07-24
 Duration minutes: unavailable
 Outcome: completed
-Rework count: 0
+Rework count: 1
 Tokdash session IDs: unavailable
 Tokdash start tokens: unavailable
 Tokdash start cost: unavailable
@@ -22,4 +22,5 @@ Correct completion-rate semantics, complete the task table fields, and provide a
 - Task table shows objective, timestamps, duration, outcome, rework, tokens, cost, and snapshot state.
 - Automatic adoption failure offers manual directory entry.
 - JavaScript and Python checks pass.
+
 
