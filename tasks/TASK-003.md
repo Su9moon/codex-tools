@@ -1,6 +1,6 @@
 # TASK-003 — Rename global Skill to save-tokens
 
-Status: Completed
+Status: Completed (legacy aggregate snapshot)
 Started: 2026-07-23
 
 ## Objective

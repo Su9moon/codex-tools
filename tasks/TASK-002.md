@@ -1,6 +1,6 @@
 # TASK-002 — Deploy Tokdash and globally install project-manager
 
-Status: Completed
+Status: Completed (legacy aggregate snapshot)
 Started: 2026-07-23
 
 ## Objective

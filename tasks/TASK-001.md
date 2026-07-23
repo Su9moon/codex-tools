@@ -1,6 +1,6 @@
 # TASK-001 — Establish the Codex Tools project-management foundation
 
-Status: Completed
+Status: Completed (legacy aggregate snapshot)
 Started: 2026-07-23
 
 ## Objective

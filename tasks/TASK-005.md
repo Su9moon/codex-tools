@@ -5,7 +5,8 @@ Started: 2026-07-24
 Completed: 2026-07-24
 Duration minutes: unavailable
 Outcome: completed
-Rework count: 1
+Rework count: 2
+Negative rating count: 3
 Tokdash session IDs: unavailable
 Tokdash start tokens: unavailable
 Tokdash start cost: unavailable
